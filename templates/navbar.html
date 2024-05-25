@@ -1,0 +1,44 @@
+<style>
+    .navbar-wrapper{
+        height: 20vh;
+    }
+    .navbar-background-custom{
+        background-color: #B336FF;
+    }
+    .nav-link-custom{
+        text-decoration: none;
+        color: white;
+        padding: 20px;
+        font-size: 1.2em;
+    }
+    .nav-link-custom:hover{
+        text-decoration: none;
+        color: #5EF0C4;
+    }
+</style>
+<div class="navbar-wrapper">
+<div class="navbar-background-custom">
+<nav class="navbar navbar-expand-lg navbar-light">
+	<a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='images/logo.png') }}"></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    	<ul class="navbar-nav">
+    		<li class="navbar-item">
+    			<a class="nav-link-custom" href="{{ url_for('index') }}">Home</a>
+    		</li>
+    		<li class="nav-item">
+    			<a class="nav-link-custom" href="{{ url_for('view_cart') }}">Cart</a>
+    		</li>
+    		<li class="nav-item">
+    			<a class="nav-link-custom" href="{{ url_for('about') }}">About Us</a>
+    		</li>
+            <li class="nav-item">
+                <a class="nav-link-custom" href="{{ url_for('checkout') }}">Checkout</a>
+            </li>
+    	</ul>
+    </div>
+</nav>
+</div>
+</div>

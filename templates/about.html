@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>About Us - Flask Shop</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style type="text/css">
+	@media (max-width: 800px) {
+		body{font-size: 0.8em;}
+	}
+</style>
+<body>
+	{% include 'navbar.html' %}
+
+	<div class="container">
+		<div class="row mt-3">
+			<div class="col md-6">
+		<img width="100%" src="{{ url_for('static', filename='images/pexels-chuck-2834917.jpg') }}">
+	</div>
+	<div class="col md-6">
+		<h1 class="mt-5">About Us</h1>
+<p>
+Welcome to Ballershop, your premier destination for all things stylish and unique. Nestled in the heart of Kyiv, we pride ourselves on curating a diverse collection of handpicked items that cater to every taste and occasion. Whether you're searching for the perfect gift, updating your wardrobe, or simply treating yourself to something special, our carefully selected range ensures there's something for everyone.
+</p>
+<p>
+At Ballershop, we believe in the power of individuality. That's why we go above and beyond to source products that stand out from the crowd. From chic fashion pieces to one-of-a-kind home decor, each item in our inventory has been chosen with an eye for quality, craftsmanship, and style. We strive to create an immersive shopping experience where you can explore, discover, and express your personal sense of flair.
+</p>
+<p>
+Our commitment to customer satisfaction is at the core of everything we do. From the moment you step through our doors or browse our online store, our friendly team is here to assist you every step of the way. Whether you need help finding the perfect fit, styling advice, or assistance with placing an order, we're dedicated to ensuring your shopping experience with us is nothing short of exceptional.
+</p>
+<p>
+At Ballershop, we believe in giving back to the community that supports us. That's why we're proud to partner with local artisans and designers, showcasing their talent and craftsmanship alongside our own collection. By championing small businesses and fostering a sense of community, we strive to make a positive impact both locally and beyond.
+</p>
+<p>
+Thank you for choosing Ballershop as your go-to destination for all things fashion, home, and lifestyle. We're honored to be a part of your journey and look forward to helping you discover the perfect pieces to enhance your life and style.
+</p>
+		<p>For more information, contact us at <a href="mailto:info@flaskshop.com">info@flaskshop.com</a>.</p>
+	</div>
+</div>
+	</div>
+
+	{% include 'footer.html' %}
+</body>
+</html>

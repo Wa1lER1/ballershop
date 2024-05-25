@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Shop</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        .product img{
+            height: 40vh;
+            object-fit: contain;
+        }
+        .button-custom-green{
+            width: 25vw;
+        height: 6.934vh;
+        background-color: #00E3E3;
+        color: white;
+        border: none;
+        border-radius: 24px;
+        font-size: 0.9em;
+        }
+        .button-custom-orange{
+            width: 70%;
+        height: 6.934vh;
+        background-color: #FFBE73;
+        color: white;
+        border: none;
+        border-radius: 24px;
+        font-size: 0.9em;
+        }
+    </style>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1 class="mt-5">Welcome to Flask Shop</h1>
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <form action="/" method="post" id="filterForm">
+                    <div class="form-group">
+                        
+                        <label for="category">Category</label>
+                        <select class="form-control" id="category" name="category">
+                            <option value="">All</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Clothes">Clothes</option>
+                            <option value="Basketballs">Basketballs</option>
+                        </select>
+                    </div>
+                    
+                
+                <form action="/" method="post" id="filterForm">
+                    <div class="form-group">
+                        
+                        <label for="brand">Brand</label>
+                        <select class="form-control" id="brand" name="brand">
+                            <option value="">All</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Spalding">Spalding</option>
+                            <option value="Nike">Nike</option>
+                            <option value="Other">Other Brands</option>
+
+                        </select>
+                    </div>
+                    <button type="submit" class="button-custom-green">Apply Filters</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            {% for product in products %}
+            <div class="col-md-4">
+                <div class="product" class="card mb-4 shadow-sm">
+                    <img height="auto" width="100%" src="{{ url_for('static', filename=product['image']) }}" class="card-img-top" alt="{{ product.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">Price: ${{ product.price }}</p>
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                            <button type="submit" class="button-custom-orange">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>
+

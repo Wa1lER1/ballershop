@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Showcase</title>
+  <!--Підключаємо bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<style type="text/css">
+  .form-div {
+    padding: 20px;
+  }
+</style>
+<body>
+  <div class="row">
+        <div class="col-sm-6">
+          <div>Column 1</div>
+        </div>
+        <div class="col-sm-6">
+          <div>Column 2</div>
+        </div>
+      </div>
+  <div class="container">
+    <!-- Тут пишемо код, клас контейнер дозволяє використовувати бутстрап -->
+     <h1>Пробуэмо Bootstrap</h1>
+     <p>Звичайний текст</p>
+     <h2>Варіанти тексту</h2>
+      <p class="text-muted">Менш виразний текст</p>
+      <h1>Заголовок 1</h1>
+      <h2>Заголовок 2</h2>
+      <h3>Заголовок 3</h3>
+      <h4>Заголовок 4</h4>
+      <h5>Заголовок 5</h5>
+      <h6>Заголовок 6</h6>
+      <a href="#">Посилання</a>
+      <h2>Кнопки</h2>
+      <button type="button" class="btn btn-primary">Основна кнопка</button>
+      <button type="button" class="btn btn-secondary">Другорядна кнопка</button>
+      <button type="button" class="btn btn-success">Кнопка що повідомляє про успіх</button>
+      <button type="button" class="btn btn-danger">Кнопка що повідомляє про небезпеку</button>
+      <button type="button" class="btn btn-warning">Попереджувальна кнопка</button>
+      <button type="button" class="btn btn-info">Інформаційна кнопка</button>
+      <button type="button" class="btn btn-light">Світла кнопка</button>
+      <button type="button" class="btn btn-dark">Темна кнопка</button>
+      <form>
+        <div class="form-group">
+          <label for="exampleInput">Напис над полем введення</label>
+          <input type="text" class="form-control" id="exampleInput" placeholder="Введіть текст">
+        </div>
+        <div class="form-group">
+          <label for="exampleSelect">Напис над текстом</label>
+          <select class="form-control" id="exampleSelect">
+            <option>Варіант 1</option>
+            <option>Варіант 2</option>
+            <option>Варіант 3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Напис над багаторядковим полем введення</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Відкрити модальне вікно
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="form-div">
+            <label for="loginInput">Логін</label>
+            <input type="text" class="form-control" id="exampleInput" placeholder="Введіть Логін">
+            <label for="passwordInput">Пароль</label>
+            <input type="text" class="form-control" id="exampleInput" placeholder="Введіть Пароль">
+            <button type="submit" class="btn btn-primary">Авторизуватися</button>
+            </div>
+            </div>
+      </div>
+    </div>
+  </div>
+
+ 
+   <!--Підключаємо bootstrap (скріпти)-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

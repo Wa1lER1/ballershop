@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        .button-custom-green{
+            width: 25vw;
+        height: 6.934vh;
+        background-color: #00E3E3;
+        color: white;
+        border: none;
+        border-radius: 24px;
+        font-size: 1.4em;
+        }
+        .checkout-wrapper{
+            padding-bottom: 10vh;
+        }
+    </style>
+    {% include 'navbar.html' %}
+    <div class="checkout-wrapper">
+    <div class="container">
+
+        <h1 class="mt-5">Checkout</h1>
+
+        <div class="row mt-3">
+           <div class="col md-6">
+               <h3>Cart Contents:</h3>
+               <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in cart %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" class="text-right">Total:</td>
+                    <td>${{ total_price }}</td>
+                </tr>
+            </tfoot>
+        </table>
+           </div>
+            <div class="col-md-6">
+                <h3>Enter Your Details:</h3>
+                <form action="{{ url_for('checkout') }}" method="post">
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" class="form-control" id="email" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Surname:</label>
+                        <input type="text" class="form-control" id="surname" name="surname">
+                    </div>
+                    <button type="submit" class="button-custom-green">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        {% if thank_you %}
+        <div class="alert alert-success mt-3" role="alert">
+            Thank you! We will contact you shortly.
+        </div>
+        {% endif %}
+    </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -24,10 +24,11 @@ def index():
 	if request.method == 'POST':
 		selected_category = request.form.get('category')
 		selected_brand = request.form.get('brand')
+		filtered_products = products
 		if selected_category:
 			filtered_products = [product for product in products if product['category'] == selected_category]
 		if selected_brand:
-			filtered_products = [product for product in products if product['brand'] == selected_brand]
+			filtered_products = [product for product in filtered_products if product['brand'] == selected_brand]
 		else:
 			filtered_products = products
 		return render_template('index.html', products=filtered_products)
